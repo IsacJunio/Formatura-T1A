@@ -1,0 +1,152 @@
+/* Geral */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #f9f4ef;
+  --headline: #020826;
+  --paragraph: #716040;
+  --button: #8c7851;
+  --butto_text: #fffffe;
+
+  /* Illustration */
+  --stroke:#020826;
+  --main: #fffffe;
+  --highlight: #8c7851;
+  --seconndary: #eaddcf;
+  --tertiary: #f25042;
+}
+
+body {
+  background: var(--main);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Nav bar */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px;
+  background: var(--headline);
+}
+
+.nav__logo {
+  color: var(--butto_text);
+  font-size: 2rem;
+  font-weight: 300;
+  padding-left: 10px;
+}
+
+.nav__ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding-right: 10px;
+}
+
+.nav__ul li a{
+  text-decoration: none;
+  color: var(--butto_text);
+  transition: .4s;
+  font-size: 20px;
+}
+
+.nav__ul li a:hover{
+  color: var(--tertiary);
+}
+
+@media (max-width: 450px){
+  nav{
+    display: none;
+  }
+}
+
+/* main */
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.main{
+  width: 100%;
+  height: 100vh; /* Defina uma altura para visualizar o efeito */
+  background-image: url(Images/fundo_formatura.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.main::before{
+  content: "";
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.842);
+}
+
+.main__container{
+  position: absolute;
+  align-items: center;
+  justify-items: center;
+}
+
+.main__container img{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  animation: flutuar 3s ease-in-out infinite;
+  box-shadow: 0 0 40px 1px var(--background);
+}
+
+@keyframes flutuar {
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-20px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+.main__container h1{
+  color: var(--butto_text);
+  font-size: 70px;
+}
+
+.main__container p{
+  color: var(--butto_text);
+  line-break: normal;
+  width: 70%;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 450px){
+  .main__container img{
+    width: 200px;
+    height: 200px;
+  }
+
+  .main__container h1{
+    font-size: 45px;
+  }
+
+  .main__container p{
+    font-size: 20px;
+  }
+}
